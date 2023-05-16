@@ -1,0 +1,11 @@
+name: Callee
+on:
+  workflow_call:
+    secrets:
+      SETEC_ASTRONOMY:
+
+jobs:
+  secrets-bug-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "It worked!"

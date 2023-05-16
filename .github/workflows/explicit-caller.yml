@@ -1,0 +1,15 @@
+name: Caller
+on:
+  push:
+
+jobs:
+  explicitly-set-secrets:
+    name: Explicitly set secrets
+    uses: ./.github/workflows/callee.yml
+    secrets:
+      SETEC_ASTRONOMY: ${{ secrets.SETEC_ASTRONOMY }}
+  inherit-secrets:
+    name: Inherit secrets
+    uses: ./.github/workflows/callee.yml
+    secrets: inherit
+    
